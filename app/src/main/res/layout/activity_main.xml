@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Cabeçalho -->
+    <LinearLayout
+        android:id="@+id/Main_Activity_Linear_Layout_Cabecalho"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0033b0"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Boas-vindas -->
+        <LinearLayout
+            android:id="@+id/Main_Activity_Linear_Layout_Boas_Vindas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/Splash"
+                app:cardCornerRadius="25dp">
+
+                <ImageButton
+                    android:id="@+id/Main_Activity_Image_Button_Usuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    app:srcCompat="@drawable/ic_agibank" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/Main_Activity_Text_View_Boas_Vindas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Olá, Usuário!"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- Saldo -->
+        <TextView
+            android:id="@+id/Main_Activity_Titulo_Saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo em conta"
+            android:textColor="@color/white"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/Main_Activity_Saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$ 1.441,00"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Search -->
+    <SearchView
+        android:id="@+id/Main_Activity_Search_View"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Buscar Opção..."
+        app:layout_constraintTop_toBottomOf="@id/Main_Activity_Linear_Layout_Cabecalho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- RecyclerView rolável -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Main_Activity_Grid_Opcoes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/Main_Activity_Search_View"
+        app:layout_constraintBottom_toTopOf="@id/Main_Activity_Card_NavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Navbar flutuante -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Main_Activity_Card_NavBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="8dp"
+        android:translationZ="8dp"
+        app:cardCornerRadius="0dp"
+        android:foreground="?attr/selectableItemBackground">
+
+        <LinearLayout
+            android:id="@+id/Main_Activity_Linear_Layout_Nav_Bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:paddingBottom="16dp"
+            android:background="@color/white">
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/ic_inicio" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/ic_cartoes" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/ic_perfil" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:srcCompat="@drawable/ic_conta" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

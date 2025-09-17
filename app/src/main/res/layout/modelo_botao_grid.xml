@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="130dp"
+    android:gravity="center_horizontal|top"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_opcao"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="6dp"
+        >
+
+        <ImageView
+            android:id="@+id/Modelo_Botao_Grid_Background"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/Modelo_Botao_Grid_Titulo_Inferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Titulo"
+        android:textSize="14sp"
+        android:textColor="@color/padrao"/>
+
+</LinearLayout>
